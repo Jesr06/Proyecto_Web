@@ -1,3 +1,17 @@
+:root{
+
+    --Botones: #FDC006;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --gris-Principal: #1c1c1c;
+    --gris-azul: #070612;
+
+}
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
 
 * {
@@ -58,7 +72,7 @@ header h2 {
     font-size: 25px;
 }
 
-header button {
+header a {
     margin-top: 3rem;
     margin-left: 3rem;
     margin-right: 3rem;
