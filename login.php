@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        header("location: bienvenida.php");
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,20 +46,20 @@
 
             <div class="contenedor__login-register">
                 <!-- Login-->
-                <form action="" class="formulario__login">
+                <form action="php/login_usuario_be.php" method="POST" class="formulario__login" >
                     <h2>Iniciar sesíon</h2>
-                    <input type="text" placeholder="Correo electronico">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Correo electronico" name="correo">
+                    <input type="password" placeholder="Contraseña" name="contrasena">
                     <button>entrar</button>
 
                 </form>
                 <!-- register-->
-                <form action="" class="formulario__register">
+                <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre completo">
-                    <input type="text" placeholder="Correo electronico">
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Nombre completo"  name= "nombre_completo">
+                    <input type="text" placeholder="Correo electronico"  name= "correo">
+                    <input type="text" placeholder="Usuario"  name= "usuario">
+                    <input type="password" placeholder="Contraseña"  name= "contrasena">
                     <button>Registrarse</button>
                 </form>
 
