@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+body {
+  background-color: rgb(48, 47, 47);
+  color: antiquewhite;
+}
+
+#size-select {
+  background: #434364;
+  color: #fff;
+  display: flex;
+  margin-left: 170px;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  border: 1px #4e5b79 solid;
+  border-radius: 1em;
+  padding: 10px 15px 6px 65px;
+  cursor: pointer;
+}
+#collar-select{
+  background: #434364;
+  color: #fff;
+  display: flex;
+  margin-left: 140px;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  border: 1px #4e5b79 solid;
+  border-radius: 1em;
+  padding: 10px 15px 6px 65px;
+  cursor: pointer;
+}
+
+#colorSelector{
+  background: #434364;
+  color: #fff;
+  display: flex;
+  margin-left: 140px;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  border: 1px #4e5b79 solid;
+  border-radius: 1em;
+  padding: 10px 15px 6px 65px;
+  cursor: pointer;
+}
+.shirt img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+h2 {
+  margin-left: 90px;
+  margin-top: 20px;
+}
+
+.shirt-images {
+  flex: 0 0 40%;
+  margin-right: 20px;
+}
+
+.options {
+  flex: 1;
+
+}
+
+.option {
+  margin-bottom: 10px;
+}
+
+.option h4 {
+  margin-left: 70px;
+}
+
+.color-options {
+  text-align: center;
+
+}
+
+.shirt-img {
+  width: 400px;
+  height: 400px;
+  display: none;
+  /* Ocultar todas las imágenes de camisa por defecto */
+  text-align: left;
+  margin-right: 0;
+  margin-left: 40px;
+}
+
+.show {
+  display: block;
+  /* Mostrar la imagen seleccionada */
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.preview {
+  margin-top: 50px;
+}
+
+.preview img {
+  max-width: 350px;
+  max-height: 350px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
