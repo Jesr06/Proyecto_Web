@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['usuario'])) {
   echo '
           <script>
                 alert("Por favor, inicia sesion para continuar");
@@ -33,7 +33,7 @@ if(!isset($_SESSION['usuario'])) {
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="bienvenida.php">
         <img src="img/logo.png" alt="Logo">
         <h4 class="d-inline-block align-text-top">EarShop</h4>
       </a>
@@ -53,10 +53,10 @@ if(!isset($_SESSION['usuario'])) {
             <a href="#">Ofertas</a>
           </li>
           <li>
-            <a href="#">Contactos</a>
+            <a href="personalizacion.php">Personalizar</a>
           </li>
           <li>
-            <a href="#">Cuenta</a>
+            <a href="usuario.php">Cuenta</a>
           </li>
           <li>
             <a href="php/cerrar_sesion.php">Cerrar sesion</a>
@@ -72,8 +72,8 @@ if(!isset($_SESSION['usuario'])) {
     <h2>"Viste tu estilo único, personaliza camisas con el diseño
       <br>que prefieras para mostrar al mundo tu personalidad"
     </h2>
-    <a href="login.php" type="button" class="btn btn-outline-warning btn-lg">Registrarse</a>
-    <a href="login.php" type="button" class="btn btn-warning btn-lg">Iniciar sesión</a>
+    <!-- <a href="login.php" type="button" class="btn btn-outline-warning btn-lg">Registrarse</a> -->
+    <!-- <a href="login.php" type="button" class="btn btn-warning btn-lg">Iniciar sesión</a> -->
   </header>
   <!--Contenido-->
 

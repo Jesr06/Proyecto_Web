@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    echo '
+          <script>
+                alert("Por favor, inicia sesion para continuar");
+              window.location = "login.php";
+            </script>
+        ';
+    session_destroy();
+    die();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +33,7 @@
     <!--header-->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="bienvenida.php">
                 <img src="img/logo.png" alt="Logo">
                 <h4 class="d-inline-block align-text-top">EarShop</h4>
             </a>
@@ -36,10 +54,13 @@
                         <a href="#">Ofertas</a>
                     </li>
                     <li>
-                        <a href="#">Contactos</a>
+                        <a href="personalizacion.php">Personalizar</a>
                     </li>
                     <li>
                         <a href="usuario.php">Cuenta</a>
+                    </li>
+                    <li>
+                        <a href="php/cerrar_sesion.php">Cerrar sesion</a>
                     </li>
                 </ul>
             </div>
@@ -54,11 +75,12 @@
             <p>Documento:</p>
             <p>Telefono:</p>
         </div>
-        <hr></hr>
+        <hr>
+        </hr>
         <div>
             <h3>Historial de Compras</h3>
         </div>
-        
+
     </header>
 
     <!--footer-->
