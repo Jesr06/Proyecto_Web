@@ -6,20 +6,19 @@
 
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
-    $contrasena = hash('sha512', $contrasena);
 
-    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo ='$correo'
+    $validar_login = mysqli_query($conexion, "SELECT * FROM administrados WHERE correo ='$correo'
     and contrasena = '$contrasena'");
 
     if(mysqli_num_rows($validar_login) >0){
-        $_SESSION['usuario'] = $correo;
-        header("location: ../bienvenida.php");
+        $_SESSION['administrados'] = $correo;
+        header("location: ../admin/indexAdmin.php");
         exit;
     }else{
         echo '
             <script>
                 alert("usuario no encontrado, verifique los datos introducidos");
-                window.location = "../login.php"
+                window.location = "../loginAdmin.php"
             </script>
 
         ';

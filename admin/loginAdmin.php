@@ -1,8 +1,8 @@
 <?php
 
     session_start();
-    if(isset($_SESSION['usuario'])){
-        header("location: bienvenida.php");
+    if(isset($_SESSION['administrados'])){
+        header("location: indexAdmin.php");
     }
 
 ?>
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Login Y registro</title>
 
 </head>
@@ -26,8 +26,8 @@
 <body>
 <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="img/logo.png" alt="Logo">
+        <a class="navbar-brand" href="../index.html">
+         
           <h4 class="d-inline-block align-text-top">EarShop</h4>
         </a>
         <button class="navbar-toggler toggler-color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,21 +35,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li>
-              <a href="#">Mujer</a>
-            </li>
-            <li>
-              <a href="#">Hombre</a>
-            </li>
-            <li>
-              <a href="#">Ofertas</a>
-            </li>
-            <li>
-              <a href="personalizacion.php">Personalizar</a>
-            </li>
-            <li>
-              <a href="usuario.php">Cuenta</a>
-            </li>
+          
+            
           </ul>
         </div>
       </div>
@@ -68,10 +55,9 @@
 
                 <div class="caja__trasera-register">
 
-                    <h3>¿Aun no tienes una cuenta?</h3>
-                    <p>Registrate para iniciar sesion</p>
-                    <button id="btn__registrarse">Registrarse</button>
-
+                    <h3>bienvenido administrador</h3>
+                    <p>Inicia sesion en tu cuenta <br>para gestionar tus usuarios</p>
+                 
                 </div>
             </div>
 
@@ -79,7 +65,7 @@
 
             <div class="contenedor__login-register">
                 <!-- Login-->
-                <form action="php/login_usuario_be.php" method="POST" class="formulario__login" >
+                <form action="../php/login_admin.php" method="POST" class="formulario__login" >
                     <h2>Iniciar sesíon</h2>
                     <input type="text" placeholder="Correo electronico" name="correo">
                     <input type="password" placeholder="Contraseña" name="contrasena">
@@ -100,10 +86,11 @@
 
 
         </div>
-
+        
     </main>
-    <script src="js/login.js"></script>
-    <a class="login_admin" href="admin/loginAdmin.php">Login Admin</button>
+    <script src="../js/login.js"></script>
+    
+    <a class="login_admin" href="../login.php">Login Usuario</button>
 
 </body>
 
