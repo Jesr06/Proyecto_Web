@@ -1,39 +1,21 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION['administrados'])) {
-  echo '
-          <script>
-                alert("Por favor, inicia sesion para continuar");
-              window.location = "loginAdmin.php";
-            </script>
-        ';
-  session_destroy();
-  die();
-}
-
-
-?>
-
-
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EarShop</title>
+  <title>EarShop/subirDiseño</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/subir.css">
 </head>
 
 <body>
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="bienvenida.php">
+      <a class="navbar-brand" href="indexAdmin.php">
         <img src="../img/logo.png" alt="Logo">
         <h4 class="d-inline-block align-text-top">EarShop</h4>
       </a>
@@ -47,40 +29,81 @@ if (!isset($_SESSION['administrados'])) {
             <a href="#">Usuarios</a>
           </li>
           <li>
-            <a href="subirAdmin.php">Subir Diseño</a>
+            <a href="#">Subir Diseño</a>
           </li>
-         
           <li>
             <a href="#">Pedidos</a>
           </li>
-          
           <li>
             <a href="../php/cerrar_sesion.php">Cerrar sesion</a>
           </li>
-
         </ul>
       </div>
     </div>
   </nav>
-  <!--header-->
-  <header class="container-fluid">
-    <h1>Gestion de usuarios</h1>
-    <h2>"Bienvenido Administrador"
-      
-    </h2>
- 
-  </header>
   <!--Contenido-->
-
-
-
-
-
-
-
-
-
-
+  <div class="container">
+    <div class="title">Subir nuevo diseño</div>
+    <div class="content">
+      <form action="../php/conexion_diseno.php" method="POST" class="formulario__diseno" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nombre del diseño</span>
+            <input type="text" required name="name">
+          </div>
+          <div class="input-box">
+            <span class="details">Precio</span>
+            <input type="number" required name="precio">
+          </div>
+          <div class="input-box">
+            <span class="details">Talla de camisa</span>
+            <input type="text" placeholder="14,16,S,M,L..." required name="talla">
+          </div>
+          <div class="input-box">
+            <span class="details">Subir imágen</span>
+            <input type="file" required name="image" class="form-control">
+          </div>
+          <div class="input-box">
+            <span class="details">Descripción</span>
+            <textarea name="descripcion" cols="70" rows="5" required></textarea>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="hombre">
+          <input type="radio" name="gender" id="dot-2" value="mujer">
+          <input type="radio" name="gender" id="dot-3" value="unisex">
+          <input type="radio" name="gender" id="dot-4" value="nino">
+          <input type="radio" name="gender" id="dot-5" value="nina">
+          <span class="gender-title">Gendero</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Hombre</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Mujer</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Unisex</span>
+            </label>
+            <label for="dot-4">
+              <span class="dot four"></span>
+              <span class="gender">niño</span>
+            </label>
+            <label for="dot-5">
+              <span class="dot five"></span>
+              <span class="gender">niña</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Subir" name="guardar">
+        </div>
+      </form>
+    </div>
+  </div>
   <!--footer-->
   <footer class="container-fluid">
     <div class="row">

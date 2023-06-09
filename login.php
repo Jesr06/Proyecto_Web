@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     if(isset($_SESSION['usuario'])){
         header("location: bienvenida.php");
@@ -7,10 +6,8 @@
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login Y registro</title>
-
+    <title>EarShop</title>
 </head>
 
 <body>
@@ -59,11 +55,9 @@
         <div class="contenedor__todo">
             <div class="caja__trasera">
                 <div class="caja__trasera-login">
-
                     <h3>¿Ya tienes una cuenta?</h3>
                     <p>Inicia sesíon para entrar en la pagina</p>
                     <button id="btn__iniciar-sesion">Iniciar sesíon</button>
-
                 </div>
 
                 <div class="caja__trasera-register">
