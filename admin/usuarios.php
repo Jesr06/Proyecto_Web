@@ -27,9 +27,20 @@ if (!isset($_SESSION['administrados'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://kit.fontawesome.com/489fef096a.js" crossorigin="anonymous"></script>
+
 </head>
 
+
+
 <body>
+    <script>
+        function eliminar(){
+            var respuesta =confirm("Estas seguro de eliminar al usuario?");
+            return respuesta
+        }
+    </script>
+
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
@@ -65,12 +76,59 @@ if (!isset($_SESSION['administrados'])) {
   <!--header-->
   <header class="container-fluid">
     <h1>Gestion de usuarios</h1>
-    <h2>"Bienvenido Administrador"
-      
-    </h2>
- 
+    
   </header>
   <!--Contenido-->
+
+  <?php 
+    include "../php/conexion_be.php";
+        include "../php/eliminar_usuario.php";
+
+    ?>
+
+    <div>
+        <table class="table table-bordered border-primary" >
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">correo</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">usuario</th>
+
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+
+                    <?php
+                        include "../php/conexion_be.php";
+                    $sql=$conexion->query("select * from usuarios");
+                    while($datos=$sql->fetch_object()){ ?>
+                <tr>
+                    <td><?= $datos->id ?></td>
+                    <td><?= $datos->correo?></td>
+                    <td><?= $datos->nombre_completo?></td>
+                    <td><?= $datos->usuario?></td>
+
+                    
+                     <td>      
+                    
+                    <a onclick="return eliminar()" href="usuarios.php?id=<?= $datos->id ?>"><i class="fa-solid fa-trash"></i></i></a>
+
+                    </td>
+                </tr>
+                     <?php }
+                     ?>
+
+
+               
+               
+            </tbody>
+        </table>
+
+
+    </div>
 
 
 

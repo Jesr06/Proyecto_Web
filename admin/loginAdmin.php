@@ -26,7 +26,7 @@
 <body>
 <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
+        <a class="navbar-brand" href="../index.php">
          
           <h4 class="d-inline-block align-text-top">EarShop</h4>
         </a>
