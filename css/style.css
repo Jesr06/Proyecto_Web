@@ -1,5 +1,4 @@
 :root{
-
     --Botones: #FDC006;
     --blanco: #FFFFFF;
     --negro: #000000;
@@ -7,10 +6,6 @@
     --gris-azul: #070612;
 
 }
-
-
-
-
 
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
 
@@ -98,6 +93,7 @@ footer {
 
 footer img {
     width: 150px;
+    align-items: center;
 }
 
 footer h4 {
@@ -146,6 +142,11 @@ footer ul li a {
     transition: all 300ms;
     color: var(--Botones);
     text-decoration: none;
+}
+
+.principal {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 

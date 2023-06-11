@@ -63,6 +63,7 @@
             <span class="details">Subir imágen</span>
             <input type="file" required name="image" class="form-control">
           </div>
+          
           <div class="input-box">
             <span class="details">Descripción</span>
             <textarea name="descripcion" cols="70" rows="5" required></textarea>

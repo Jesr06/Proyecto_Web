@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['usuario'])) {
   echo '
           <script>
@@ -12,14 +10,10 @@ if (!isset($_SESSION['usuario'])) {
   session_destroy();
   die();
 }
-
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +22,6 @@ if (!isset($_SESSION['usuario'])) {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
@@ -61,7 +54,6 @@ if (!isset($_SESSION['usuario'])) {
           <li>
             <a href="php/cerrar_sesion.php">Cerrar sesion</a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -72,27 +64,46 @@ if (!isset($_SESSION['usuario'])) {
     <h2>"Viste tu estilo único, personaliza camisas con el diseño
       <br>que prefieras para mostrar al mundo tu personalidad"
     </h2>
-    <!-- <a href="login.php" type="button" class="btn btn-outline-warning btn-lg">Registrarse</a> -->
-    <!-- <a href="login.php" type="button" class="btn btn-warning btn-lg">Iniciar sesión</a> -->
   </header>
   <!--Contenido-->
-
-
-
-
-
-
-
-
-
-
+  <div class="container mt-3 pt-5 pb-5">
+    <div class="row">
+      <?php
+      include_once "php/conexion_be.php";
+      $conexion = mysqli_connect($host, $dbuser, $dbpassword, $dbname);
+      if ($conexion != true) {
+        die("Error de conexion " . mysqli_connect_error());
+      }
+      $sql = "SELECT `id`, `nombre`, `precio`, `talla`, `imagen`, `descripcion`, `genero` FROM `diseños`";
+      $resultSet = mysqli_query($conexion, $sql);
+      while ($row = mysqli_fetch_row($resultSet)) {
+        ?>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card">
+            <img src="images/<?php echo $row[4]; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                <?php echo $row[1]; ?>
+              </h5>
+              <p class="card-text">
+                <?php echo $row[2]; ?>
+              </p>
+              <a href="#" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+      ?>
+    </div>
+  </div>
   <!--footer-->
   <footer class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-4 col-lg-4">
-        <img src="img/logo.png" alt="Logo">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+        <img src="img/logo.png" alt="Logo" class="mx-auto">
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Sobre nosotros</h4>
         <p>Somos una empresa que busca ofrecer a los clientes
           la posibilidad de expresarse a través de la ropa que
@@ -100,9 +111,9 @@ if (!isset($_SESSION['usuario'])) {
           y con diseños únicos. Queremos que cada cliente sienta
           que su camisa es única y refleje su estilo y personalidad.</p>
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Contáctate con nosotros</h4>
-        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled">
+        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled text-center">
           <li>
             <a href="#" class="text-reset"><i class="fab fa-twitter"></i></a>
             <a href="#" class="text-reset"><i class="fab fa-facebook"></i></a>
