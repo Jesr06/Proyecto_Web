@@ -26,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li>
-            <a href="#">Usuarios</a>
+            <a href="usuarios.php">Usuarios</a>
           </li>
           <li>
-            <a href="#">Subir Diseño</a>
+            <a href="subirAdmin.php">Subir Diseño</a>
           </li>
           <li>
             <a href="#">Pedidos</a>
@@ -73,8 +73,6 @@
           <input type="radio" name="gender" id="dot-1" value="hombre">
           <input type="radio" name="gender" id="dot-2" value="mujer">
           <input type="radio" name="gender" id="dot-3" value="unisex">
-          <input type="radio" name="gender" id="dot-4" value="nino">
-          <input type="radio" name="gender" id="dot-5" value="nina">
           <span class="gender-title">Gendero</span>
           <div class="category">
             <label for="dot-1">
@@ -88,14 +86,6 @@
             <label for="dot-3">
               <span class="dot three"></span>
               <span class="gender">Unisex</span>
-            </label>
-            <label for="dot-4">
-              <span class="dot four"></span>
-              <span class="gender">niño</span>
-            </label>
-            <label for="dot-5">
-              <span class="dot five"></span>
-              <span class="gender">niña</span>
             </label>
           </div>
         </div>

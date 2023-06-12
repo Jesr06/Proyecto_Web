@@ -14,7 +14,7 @@
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="img/logo.png" alt="Logo">
         <h4 class="d-inline-block align-text-top">EarShop</h4>
       </a>
@@ -25,10 +25,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li>
-            <a href="#">Mujer</a>
+            <a href="mujer.php">Mujer</a>
           </li>
           <li>
-            <a href="#">Hombre</a>
+            <a href="hombre.php">Hombre</a>
           </li>
           <li>
             <a href="#">Ofertas</a>
@@ -53,10 +53,10 @@
     <a href="login.php" type="button" class="btn btn-warning btn-lg">Iniciar sesión</a>
   </header>
   <!--Contenido-->
-  <div class="container mt-3">
+  <div class="container mt-3 pt-5 pb-5">
     <div class="row">
       <?php
-      include_once "conexion_be.php";
+      include_once "php/conexion_be.php";
       $conexion = mysqli_connect($host, $dbuser, $dbpassword, $dbname);
       if ($conexion != true) {
         die("Error de conexion " . mysqli_connect_error());
@@ -67,7 +67,7 @@
         ?>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card">
-            <img src="/img/<?php echo $row[4]; ?>" class="card-img-top" alt="...">
+            <img src="images/<?php echo $row[4]; ?>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">
                 <?php echo $row[1]; ?>
@@ -75,22 +75,22 @@
               <p class="card-text">
                 <?php echo $row[2]; ?>
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="det_prod_index.php?&id=<?php echo $row[0]; ?>" class="btn btn-primary">Ver más</a>
             </div>
           </div>
-          <?php
+        </div>
+        <?php
       }
       ?>
-      </div>
     </div>
   </div>
   <!--footer-->
   <footer class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-4 col-lg-4">
-        <img src="img/logo.png" alt="Logo">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+        <img src="img/logo.png" alt="Logo" class="mx-auto">
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Sobre nosotros</h4>
         <p>Somos una empresa que busca ofrecer a los clientes
           la posibilidad de expresarse a través de la ropa que
@@ -98,9 +98,9 @@
           y con diseños únicos. Queremos que cada cliente sienta
           que su camisa es única y refleje su estilo y personalidad.</p>
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Contáctate con nosotros</h4>
-        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled">
+        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled text-center">
           <li>
             <a href="#" class="text-reset"><i class="fab fa-twitter"></i></a>
             <a href="#" class="text-reset"><i class="fab fa-facebook"></i></a>

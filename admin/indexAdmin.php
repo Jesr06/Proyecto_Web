@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['administrados'])) {
   echo '
           <script>
@@ -12,14 +10,11 @@ if (!isset($_SESSION['administrados'])) {
   session_destroy();
   die();
 }
-
-
 ?>
 
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,12 +23,11 @@ if (!isset($_SESSION['administrados'])) {
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="bienvenida.php">
+      <a class="navbar-brand" href="indexAdmin.php">
         <img src="../img/logo.png" alt="Logo">
         <h4 class="d-inline-block align-text-top">EarShop</h4>
       </a>
@@ -49,15 +43,12 @@ if (!isset($_SESSION['administrados'])) {
           <li>
             <a href="subirAdmin.php">Subir Diseño</a>
           </li>
-         
           <li>
             <a href="#">Pedidos</a>
           </li>
-          
           <li>
             <a href="../php/cerrar_sesion.php">Cerrar sesion</a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -66,28 +57,47 @@ if (!isset($_SESSION['administrados'])) {
   <header class="container-fluid">
     <h1>Gestion de usuarios</h1>
     <h2>"Bienvenido Administrador"
-      
     </h2>
- 
   </header>
   <!--Contenido-->
-
-
-
-
-
-
-
-
-
-
+  <div class="container mt-3 pt-5 pb-5">
+    <div class="row">
+      <?php
+      include_once "../php/conexion_be.php";
+      $conexion = mysqli_connect($host, $dbuser, $dbpassword, $dbname);
+      if ($conexion != true) {
+        die("Error de conexion " . mysqli_connect_error());
+      }
+      $sql = "SELECT `id`, `nombre`, `precio`, `talla`, `imagen`, `descripcion`, `genero` FROM `diseños`";
+      $resultSet = mysqli_query($conexion, $sql);
+      while ($row = mysqli_fetch_row($resultSet)) {
+        ?>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card">
+            <img src="../images/<?php echo $row[4]; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">
+                <?php echo $row[1]; ?>
+              </h5>
+              <p class="card-text">
+                <?php echo $row[2]; ?>
+              </p>
+              <a href="../detalle_producto.php?&id=<?php echo $row[0]; ?>" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <?php
+      }
+      ?>
+    </div>
+  </div>
   <!--footer-->
   <footer class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-md-4 col-lg-4">
-        <img src="../img/logo.png" alt="Logo">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+        <img src="../img/logo.png" alt="Logo" class="mx-auto">
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Sobre nosotros</h4>
         <p>Somos una empresa que busca ofrecer a los clientes
           la posibilidad de expresarse a través de la ropa que
@@ -95,9 +105,9 @@ if (!isset($_SESSION['administrados'])) {
           y con diseños únicos. Queremos que cada cliente sienta
           que su camisa es única y refleje su estilo y personalidad.</p>
       </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
+      <div class="col-xs-12 col-md-4 col-lg-4 text-center">
         <h4>Contáctate con nosotros</h4>
-        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled">
+        <ul class="col-xs-12 col-md-12 col-lg-12 list-unstyled text-center">
           <li>
             <a href="#" class="text-reset"><i class="fab fa-twitter"></i></a>
             <a href="#" class="text-reset"><i class="fab fa-facebook"></i></a>

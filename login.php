@@ -3,7 +3,6 @@
     if(isset($_SESSION['usuario'])){
         header("location: bienvenida.php");
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,7 @@
 <body>
 <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="img/logo.png" alt="Logo">
           <h4 class="d-inline-block align-text-top">EarShop</h4>
         </a>

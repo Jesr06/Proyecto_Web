@@ -44,7 +44,7 @@ if (!isset($_SESSION['administrados'])) {
   <!--nav-->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="bienvenida.php">
+      <a class="navbar-brand" href="indexAdmin.php">
         <img src="../img/logo.png" alt="Logo">
         <h4 class="d-inline-block align-text-top">EarShop</h4>
       </a>

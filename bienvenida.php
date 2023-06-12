@@ -37,10 +37,10 @@ if (!isset($_SESSION['usuario'])) {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li>
-            <a href="#">Mujer</a>
+            <a href="home_mujer.php">Mujer</a>
           </li>
           <li>
-            <a href="#">Hombre</a>
+            <a href="home_hombre.php">Hombre</a>
           </li>
           <li>
             <a href="#">Ofertas</a>
@@ -88,7 +88,7 @@ if (!isset($_SESSION['usuario'])) {
               <p class="card-text">
                 <?php echo $row[2]; ?>
               </p>
-              <a href="#" class="btn btn-primary">Ver más</a>
+              <a href="det_prod_home.php?&id=<?php echo $row[0]; ?>" class="btn btn-primary">Ver más</a>
             </div>
           </div>
         </div>
