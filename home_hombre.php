@@ -13,40 +13,43 @@
 <body>
     <!--nav-->
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="bienvenida.php">
-                <img src="img/logo.png" alt="Logo">
-                <h4 class="d-inline-block align-text-top">EarShop</h4>
-            </a>
-            <button class="navbar-toggler toggler-color" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li>
-                        <a href="home_mujer.php">Mujer</a>
-                    </li>
-                    <li>
-                        <a href="home_hombre.php">Hombre</a>
-                    </li>
-                    <li>
-                        <a href="#">Ofertas</a>
-                    </li>
-                    <li>
-                        <a href="personalizacion.php">Personalizar</a>
-                    </li>
-                    <li>
-                        <a href="usuario.php">Cuenta</a>
-                    </li>
-                    <li>
-                        <a href="php/cerrar_sesion.php">Cerrar sesion</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="bienvenida.php">
+        <img src="img/logo.png" alt="Logo">
+        <h4 class="d-inline-block align-text-top">EarShop</h4>
+      </a>
+      <button class="navbar-toggler toggler-color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          
+          <li>
+            <a href="VerCarta.php">Carrito</a>
+          </li>
+          <li>
+            <a href="home_mujer.php">Mujer</a>
+          </li>
+          <li>
+            <a href="home_hombre.php">Hombre</a>
+          </li>
+          <li>
+            <a href="pqrs.php">PQRS</a>
+          </li>
+          <li>
+            <a href="personalizacion.php">Personalizar</a>
+          </li>
+          <li>
+            <a href="usuario.php">Cuenta</a>
+          </li>
+          <li>
+            <a href="php/cerrar_sesion.php">Cerrar sesion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <!--header-->
     <header class="container-fluid">
         <h1>Personaliza camisas a tu gusto</h1>

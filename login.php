@@ -20,35 +20,39 @@
 
 <body>
 <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
-          <img src="img/logo.png" alt="Logo">
-          <h4 class="d-inline-block align-text-top">EarShop</h4>
-        </a>
-        <button class="navbar-toggler toggler-color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li>
-              <a href="#">Mujer</a>
-            </li>
-            <li>
-              <a href="#">Hombre</a>
-            </li>
-            <li>
-              <a href="#">Ofertas</a>
-            </li>
-            <li>
-              <a href="personalizacion.php">Personalizar</a>
-            </li>
-            <li>
-              <a href="usuario.php">Cuenta</a>
-            </li>
-          </ul>
-        </div>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">
+        <img src="img/logo.png" alt="Logo">
+        <h4 class="d-inline-block align-text-top">EarShop</h4>
+      </a>
+      <button class="navbar-toggler toggler-color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li>
+            <a href="VerCarta.php">Carrito</a>
+          </li>
+          <li>
+            <a href="mujer.php">Mujer</a>
+          </li>
+          <li>
+            <a href="hombre.php">Hombre</a>
+          </li>
+          <li>
+            <a href="pqrs.php">PQRS</a>
+          </li>
+          <li>
+            <a href="personalizacion.php">Personalizar</a>
+          </li>
+          <li>
+            <a href="usuario.php">Cuenta</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <main>
         <div class="contenedor__todo">

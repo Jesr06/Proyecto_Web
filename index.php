@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -25,13 +26,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li>
+            <a href="VerCarta.php">Carrito</a>
+          </li>
+          <li>
             <a href="mujer.php">Mujer</a>
           </li>
           <li>
             <a href="hombre.php">Hombre</a>
           </li>
           <li>
-            <a href="#">Ofertas</a>
+            <a href="pqrs.php">PQRS</a>
           </li>
           <li>
             <a href="personalizacion.php">Personalizar</a>
