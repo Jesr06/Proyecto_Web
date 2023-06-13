@@ -46,13 +46,16 @@ if (!isset($_SESSION['usuario'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li>
+                        <a href="VerCarta.php">Carrito</a>
+                    </li>
+                    <li>
                         <a href="home_mujer.php">Mujer</a>
                     </li>
                     <li>
                         <a href="home_hombre.php">Hombre</a>
                     </li>
                     <li>
-                        <a href="#">Ofertas</a>
+                        <a href="pqrs.php">PQRS</a>
                     </li>
                     <li>
                         <a href="personalizacion.php">Personalizar</a>
@@ -113,9 +116,9 @@ if (!isset($_SESSION['usuario'])) {
 
         <hr>
         </hr>
-        <div>
+        <!-- <div>
             <h4>Historial de Compras:</h4>
-        </div>
+        </div> -->
     </div>
 
 
